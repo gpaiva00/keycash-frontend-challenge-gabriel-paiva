@@ -1,0 +1,126 @@
+  [
+    {
+      "id": "ab1a3fc0-80dc-4025-8192-b9ba39e67a39",
+      "address": {
+        "formattedAddress": "Rua Bandeira Paulista, 594 Itaim Bibi - SP",
+        "geolocation": {
+          "lat": -23.58313,
+          "lng": -46.67611
+        }
+      },
+      "images": [
+        "https://i.imgur.com/ad0cUuB.jpg",
+        "https://i.imgur.com/7gdtIyN.jpg",
+        "https://i.imgur.com/V6bBVyF.jpg",
+        "https://i.imgur.com/WQ3gkSo.jpg",
+        "https://i.imgur.com/XAGtg4a.jpg",
+        "https://i.imgur.com/JMcV63z.jpg"
+      ],
+      "price": 1000000,
+      "bathrooms": 2,
+      "bedrooms": 1,
+      "parkingSpaces": 2,
+      "usableArea": 70,
+      "publish": true
+    },
+    {
+      "id": "b10284d0-69b6-4284-b841-10a2b36905d5",
+      "address": {
+        "formattedAddress": "Rua Joaquim Floriano, 349 Itaim Bibi - SP",
+        "geolocation": {
+          "lat": -23.58428,
+          "lng": -46.67429
+        }
+      },
+      "images": [
+        "https://i.imgur.com/nQl6Us7.jpg",
+        "https://i.imgur.com/ojDlwly.jpg",
+        "https://i.imgur.com/QwkCOct.jpg",
+        "https://i.imgur.com/MDaaTpQ.jpg",
+        "https://i.imgur.com/LLkxeSX.jpg",
+        "https://i.imgur.com/IWyRma4.jpg",
+        "https://i.imgur.com/DCAXmzx.jpg"
+      ],
+      "price": 946000,
+      "bathrooms": 2,
+      "bedrooms": 2,
+      "parkingSpaces": 2,
+      "usableArea": 68,
+      "publish": true
+    },
+    {
+      "id": "d4eda3c7-a111-4566-aec6-5573439e4376",
+      "address": {
+        "formattedAddress": "Rua da Mata, 363 Itaim Bibi - SP",
+        "geolocation": {
+          "lat": -23.58042,
+          "lng": -46.67577
+        }
+      },
+      "images": [
+        "https://i.imgur.com/q1Mj5mf.jpg",
+        "https://i.imgur.com/SDq8t69.jpg",
+        "https://i.imgur.com/QHy2i57.jpg",
+        "https://i.imgur.com/VbCUqNc.jpg",
+        "https://i.imgur.com/AmcZKVA.jpg",
+        "https://i.imgur.com/q1Mj5mf.jpg",
+        "https://i.imgur.com/6m0RetO.jpg"
+      ],
+      "price": 850000,
+      "bathrooms": 2,
+      "bedrooms": 1,
+      "parkingSpaces": 1,
+      "usableArea": 62,
+      "publish": true
+    },
+    {
+      "id": "6433a534-6193-4ade-bb8b-763bf06045b2",
+      "address": {
+        "formattedAddress": "Rua Tabapuã, 35 Itaim Bibi - SP",
+        "geolocation": {
+          "lat": -23.58185,
+          "lng": -46.67097
+        }
+      },
+      "images": [
+        "https://i.imgur.com/q1Mj5mf.jpg",
+        "https://i.imgur.com/SDq8t69.jpg",
+        "https://i.imgur.com/QHy2i57.jpg",
+        "https://i.imgur.com/VbCUqNc.jpg",
+        "https://i.imgur.com/AmcZKVA.jpg",
+        "https://i.imgur.com/q1Mj5mf.jpg",
+        "https://i.imgur.com/6m0RetO.jpg"
+      ],
+      "price": 1200000,
+      "bathrooms": 3,
+      "bedrooms": 2,
+      "parkingSpaces": 2,
+      "usableArea": 108,
+      "publish": true
+    },
+    {
+      "id": "5d427886-3c6a-46e8-94cb-0e1edb1b9b6e",
+      "address": {
+        "formattedAddress": "Rua Desconhecida, 0 Lugar Nenhum - ??",
+        "geolocation": {
+          "lat": -23.58185,
+          "lng": -46.67097
+        }
+      },
+      "images": [
+        "https://i.imgur.com/q1Mj5mf.jpg",
+        "https://i.imgur.com/SDq8t69.jpg",
+        "https://i.imgur.com/QHy2i57.jpg",
+        "https://i.imgur.com/VbCUqNc.jpg",
+        "https://i.imgur.com/AmcZKVA.jpg",
+        "https://i.imgur.com/q1Mj5mf.jpg",
+        "https://i.imgur.com/6m0RetO.jpg"
+      ],
+      "price": 0,
+      "bathrooms": 0,
+      "bedrooms": 0,
+      "parkingSpaces": 0,
+      "usableArea": 0,
+      "publish": false
+    }
+  ]

@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import colors from '../../styles/colors'
 import fonts from '../../styles/fonts'
-import margins from '../../styles/margins'
+import { margins } from '../../styles/margins'
 
 export const Container = styled.View`
   flex-direction: row;
@@ -19,6 +19,6 @@ export const Title = styled.Text`
 `
 
 export const HomeIcon = styled(MaterialCommunityIcons)`
- color: ${colors.primary};
- margin-right: ${margins.xs}
+  color: ${colors.primary};
+  margin-right: ${margins.xs};
 `
