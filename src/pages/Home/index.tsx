@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import { ScrollView } from 'react-native'
+import React, { FC, useState } from 'react'
+import { ScrollView, Text } from 'react-native'
 
 import Card from '../../components/Card'
 
@@ -8,36 +8,45 @@ import { Container, ButtonsContainer } from './styles'
 import propertyMock from '../../utils/mocks/properties.json'
 import OrderButton from '../../components/OrderButton'
 import FilterButton from '../../components/FilterButton'
+import OrderModal from '../../components/OrderModal'
 
 const Home: FC = () => {
+  const [toggleOrderModal, setToggleOrderModal] = useState(false)
+
   return (
-    <ScrollView>
-      <Container>
-        <ButtonsContainer>
-          <OrderButton onPress={() => {}} />
-          <FilterButton onPress={() => {}} />
-        </ButtonsContainer>
+    <>
+      <ScrollView>
+        <Container>
+          <ButtonsContainer>
+            <OrderButton onPress={() => setToggleOrderModal(true)} />
+            <FilterButton onPress={() => {}} />
+          </ButtonsContainer>
 
-        {propertyMock.map(property => {
-          const propertyFeatures = {
-            bathrooms: property.bathrooms,
-            bedrooms: property.bedrooms,
-            parkingSpaces: property.parkingSpaces,
-            usableArea: property.usableArea,
-          }
+          {propertyMock.map(property => {
+            const propertyFeatures = {
+              bathrooms: property.bathrooms,
+              bedrooms: property.bedrooms,
+              parkingSpaces: property.parkingSpaces,
+              usableArea: property.usableArea,
+            }
 
-          return (
-            <Card
-              key={property.id}
-              images={property.images}
-              price={property.price}
-              address={property.address}
-              features={propertyFeatures}
-            />
-          )
-        })}
-      </Container>
-    </ScrollView>
+            return (
+              <Card
+                key={property.id}
+                images={property.images}
+                price={property.price}
+                address={property.address}
+                features={propertyFeatures}
+              />
+            )
+          })}
+        </Container>
+      </ScrollView>
+      <OrderModal
+        toggle={toggleOrderModal}
+        setToggleOrderModal={setToggleOrderModal}
+      />
+    </>
   )
 }
 
