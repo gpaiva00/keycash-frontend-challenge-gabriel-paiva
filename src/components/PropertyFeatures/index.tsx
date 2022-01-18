@@ -7,6 +7,7 @@ import {
   Icon,
   IconContainer,
 } from './styles'
+
 import { PropertyFeatures as IPropertyFeatures } from '../../typings/IProperty'
 
 interface PropertyFeaturesProps {

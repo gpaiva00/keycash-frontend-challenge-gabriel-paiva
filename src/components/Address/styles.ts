@@ -13,8 +13,9 @@ export const Container = styled.View`
 `
 
 export const AddressText = styled.Text`
+  font-family: 'Roboto_300Light';
   font-size: ${fonts.s};
-  margin-left: ${margins.xs};
+  margin-left: ${margins.xxs};
   color: ${colors.text};
 `
 

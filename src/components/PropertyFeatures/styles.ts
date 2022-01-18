@@ -25,8 +25,9 @@ export const FeatureContainer = styled.View<FeatureContainerProps>`
 `
 
 export const Description = styled.Text`
+  font-family: 'Roboto_300Light';
   font-size: ${fonts.s};
-  margin-left: ${margins.xs};
+  margin-left: ${margins.xxs};
   color: ${colors.text};
 `
 
@@ -37,6 +38,11 @@ export const IconContainer = styled.View`
   width: ${sizes.propertyFeatureCircleSize};
   background: ${colors.primary};
   border-radius: 50px;
+
+  shadow-opacity: 0.5;
+  shadow-radius: 3px;
+  shadow-color: ${colors.text};
+  shadow-offset: 0px 0px;
 `
 
 export const Icon = styled(MaterialCommunityIcons)`

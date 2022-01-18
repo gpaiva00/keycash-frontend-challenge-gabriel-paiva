@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { Dimensions } from 'react-native'
 import { SliderBox } from 'react-native-image-slider-box'
 import colors from '../../styles/colors'
 
@@ -8,6 +9,8 @@ interface CardImageProps {
   images: string[]
 }
 
+const windowWidth = Dimensions.get('window').width - 40
+
 const CardImage: FC<CardImageProps> = ({ images }) => {
   return (
     <Container>
@@ -16,7 +19,12 @@ const CardImage: FC<CardImageProps> = ({ images }) => {
         dotColor={colors.primary}
         circleLoop
         imageLoadingColor={colors.primary}
+        parentWidth={windowWidth}
         activeOpacity={1}
+        ImageComponentStyle={{
+          borderTopLeftRadius: 8,
+          borderTopRightRadius: 8,
+        }}
       />
     </Container>
   )

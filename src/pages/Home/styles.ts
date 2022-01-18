@@ -1,6 +1,13 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components'
 import { margins } from '../../styles/margins'
 
 export const Container = styled.View`
   margin: ${`${margins.m} ${margins.s}`};
+`
+
+export const ButtonsContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: ${margins.xs};
 `

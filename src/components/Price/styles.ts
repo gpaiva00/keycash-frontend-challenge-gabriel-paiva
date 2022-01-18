@@ -10,6 +10,7 @@ export const Container = styled.View`
 `
 
 export const ValueText = styled.Text`
+  font-family: 'Roboto_900Black';
   font-size: ${fonts.s};
   font-weight: bold;
 `

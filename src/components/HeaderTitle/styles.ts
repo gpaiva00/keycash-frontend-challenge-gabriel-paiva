@@ -12,6 +12,7 @@ export const Container = styled.View`
 `
 
 export const Title = styled.Text`
+  font-family: 'Roboto_900Black';
   font-size: ${fonts.m};
   color: ${colors.primary};
   font-weight: bold;
@@ -20,5 +21,5 @@ export const Title = styled.Text`
 
 export const HomeIcon = styled(MaterialCommunityIcons)`
   color: ${colors.primary};
-  margin-right: ${margins.xs};
+  margin-right: ${margins.xxs};
 `
