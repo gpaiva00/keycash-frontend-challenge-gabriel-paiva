@@ -14,7 +14,7 @@ const OrderButton: FC<OrderButtonProps> = ({ onPress }) => {
     <Button
       onPress={onPress}
       text="Ordenar"
-      size="s"
+      size="xs"
       variant="outlined"
       icon={<FontAwesome name="reorder" size={15} color={colors.primary} />}
     />

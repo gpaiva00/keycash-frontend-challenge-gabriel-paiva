@@ -8,32 +8,22 @@ import { margins } from '../../styles/margins'
 interface ButtonProps {
   size?: 's' | 'm' | 'l'
   variant?: 'primary' | 'secondary' | 'outlined'
+  hasIcon?: boolean
 }
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled.TouchableOpacity<ButtonProps>`
   flex-direction: row;
-  /* justify-content: center; */
+  justify-content: ${({ hasIcon }) => (hasIcon ? 'space-between' : 'center')};
   align-items: center;
   margin-bottom: ${margins.s};
 
-  padding: ${margins.xs};
+  padding: ${({ size }) => margins[size]};
   border-radius: 8px;
-  border-width: ${({ variant }) => (variant === 'outlined' ? '1px' : 0)};
-  border-color: ${({ variant }) =>
-    variant === 'outlined' ? colors.primary : ''};
+  border-width: 1px;
+  border-color: ${colors.primary};
 
-  background: ${({ variant }) => {
-    switch (variant) {
-      case 'primary':
-        return colors.primary
-      case 'secondary':
-        return colors.secondary
-      case 'outlined':
-        return 'transparent'
-      default:
-        return colors.primary
-    }
-  }};
+  background: ${({ variant }) =>
+    variant === 'outlined' ? 'transparent' : colors[variant]};
 
   shadow-opacity: 0.5;
   shadow-radius: 3px;
@@ -41,12 +31,13 @@ export const Container = styled.TouchableOpacity`
   shadow-offset: 0px 0px;
 `
 
-export const Text = styled.Text`
+export const Text = styled.Text<ButtonProps>`
   font-family: 'Roboto_400Regular';
-  font-size: ${fonts.s};
+  font-size: ${({ hasIcon }) => (hasIcon ? fonts.s : fonts.m)};
   font-weight: bold;
 
-  margin-left: ${margins.xs};
+  margin-left: ${({ hasIcon }) => (hasIcon ? margins.xs : 0)};
 
-  color: ${({ variant }) => (variant === 'outlined' ? colors.primary : '')};
+  color: ${({ variant }) =>
+    variant === 'outlined' ? colors.primary : colors.background};
 `

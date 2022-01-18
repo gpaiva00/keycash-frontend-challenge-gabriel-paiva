@@ -6,15 +6,23 @@ interface ButtonProps {
   text: string
   onPress: () => void
   variant?: 'primary' | 'secondary' | 'outlined'
-  size?: 's' | 'm' | 'l'
+  size?: 's' | 'm' | 'l' | 'xs'
   icon?: ReactElement
 }
 
-const Button: FC<ButtonProps> = ({ text, onPress, variant, size, icon }) => {
+const Button: FC<ButtonProps> = ({
+  text,
+  onPress,
+  variant = 'primary',
+  size = 's',
+  icon,
+}) => {
   return (
-    <Container onPress={onPress} size={size} variant={variant}>
+    <Container hasIcon={!!icon} onPress={onPress} size={size} variant={variant}>
       {icon && icon}
-      <Text variant={variant}>{text}</Text>
+      <Text variant={variant} hasIcon={icon}>
+        {text}
+      </Text>
     </Container>
   )
 }

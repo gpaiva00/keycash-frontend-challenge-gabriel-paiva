@@ -9,9 +9,11 @@ import propertyMock from '../../utils/mocks/properties.json'
 import OrderButton from '../../components/OrderButton'
 import FilterButton from '../../components/FilterButton'
 import OrderModal from '../../components/OrderModal'
+import FilterModal from '../../components/FilterModal'
 
 const Home: FC = () => {
   const [toggleOrderModal, setToggleOrderModal] = useState(false)
+  const [toggleFilterModal, setToggleFilterModal] = useState(false)
 
   return (
     <>
@@ -19,7 +21,7 @@ const Home: FC = () => {
         <Container>
           <ButtonsContainer>
             <OrderButton onPress={() => setToggleOrderModal(true)} />
-            <FilterButton onPress={() => {}} />
+            <FilterButton onPress={() => setToggleFilterModal(true)} />
           </ButtonsContainer>
 
           {propertyMock.map(property => {
@@ -45,6 +47,10 @@ const Home: FC = () => {
       <OrderModal
         toggle={toggleOrderModal}
         setToggleOrderModal={setToggleOrderModal}
+      />
+      <FilterModal
+        toggle={toggleFilterModal}
+        setToggleFilterModal={setToggleFilterModal}
       />
     </>
   )

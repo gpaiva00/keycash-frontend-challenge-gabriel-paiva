@@ -14,7 +14,7 @@ const FilterButton: FC<FilterButtonProps> = ({ onPress }) => {
     <Button
       onPress={onPress}
       text="Filtrar"
-      size="s"
+      size="xs"
       variant="outlined"
       icon={<FontAwesome5 name="filter" size={15} color={colors.primary} />}
     />
