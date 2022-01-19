@@ -3,7 +3,7 @@ const fonts = {
   l: '22px',
   m: '18px',
   s: '16px',
-  xs: '8px',
-};
+  xs: '10px',
+}
 
-export default fonts;
+export default fonts

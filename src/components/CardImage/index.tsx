@@ -1,19 +1,19 @@
 import React, { FC } from 'react'
-import { Dimensions } from 'react-native'
 import { SliderBox } from 'react-native-image-slider-box'
 import colors from '../../styles/colors'
 
+import { getWindowSize } from '../../utils/getWindowSize'
 import { Container } from './styles'
-
 interface CardImageProps {
   images: string[]
+  size?: 's' | 'l'
 }
 
-const windowWidth = Dimensions.get('window').width - 40
+const CardImage: FC<CardImageProps> = ({ size, images }) => {
+  const windowWidth = getWindowSize().width - (size === 's' ? 40 : 0)
 
-const CardImage: FC<CardImageProps> = ({ images }) => {
   return (
-    <Container>
+    <Container size={size}>
       <SliderBox
         images={images}
         dotColor={colors.primary}
@@ -21,10 +21,7 @@ const CardImage: FC<CardImageProps> = ({ images }) => {
         imageLoadingColor={colors.primary}
         parentWidth={windowWidth}
         activeOpacity={1}
-        ImageComponentStyle={{
-          borderTopLeftRadius: 8,
-          borderTopRightRadius: 8,
-        }}
+        sliderBoxHeight={size === 's' ? 200 : 300}
       />
     </Container>
   )

@@ -25,7 +25,7 @@ const OrderModal: FC<OrderModalProps> = ({ toggle, setToggleOrderModal }) => {
 
   const onPressItem = (key: number) => {
     setSelectedItem(key)
-    closeModal
+    setTimeout(() => closeModal(), 500)
   }
 
   const openModal = () => modalizeRef.current?.open()

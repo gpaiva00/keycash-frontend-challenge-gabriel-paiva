@@ -1,10 +1,14 @@
 import styled from 'styled-components'
-import colors from '../../styles/colors'
-import { sizes, margins } from '../../styles/margins'
+import { sizes } from '../../styles/margins'
 
-export const Container = styled.View`
+interface ContainerProps {
+  size?: 's' | 'l'
+}
+
+export const Container = styled.View<ContainerProps>`
   width: ${sizes.cardWidth};
-  height: ${sizes.imageHeight};
+  height: ${({ size }) =>
+    size === 's' ? sizes.smallImageHeight : sizes.largeImageHeight};
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 

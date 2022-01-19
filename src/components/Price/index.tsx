@@ -5,12 +5,13 @@ import { Container, ValueText } from './styles'
 
 interface PriceProps {
   value: number
+  size?: 's' | 'l'
 }
 
-const Price: FC<PriceProps> = ({ value }) => {
+const Price: FC<PriceProps> = ({ value, size = 's' }) => {
   return (
     <Container>
-      <ValueText>{formatToCurrency(value)}</ValueText>
+      <ValueText size={size}>{formatToCurrency(value)}</ValueText>
     </Container>
   )
 }

@@ -4,11 +4,18 @@ import { Container, Input as InputComp } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: ReactElement
+  inputSize?: 's' | 'm' | 'l'
+  inputIsActive?: boolean
 }
 
-const Input: FC<InputProps> = ({ icon, ...props }) => {
+const Input: FC<InputProps> = ({
+  icon,
+  inputSize,
+  inputIsActive,
+  ...props
+}) => {
   return (
-    <Container>
+    <Container size={inputSize} inputIsActive={inputIsActive}>
       {icon && icon}
       <InputComp {...props} />
     </Container>

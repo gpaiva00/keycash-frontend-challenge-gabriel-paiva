@@ -35,5 +35,5 @@ export const Item = styled.TouchableOpacity`
 
 export const ItemText = styled.Text`
   font-family: 'Roboto_400Regular';
-  font-size: ${fonts.l};
+  font-size: ${fonts.m};
 `

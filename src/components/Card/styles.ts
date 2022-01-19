@@ -19,3 +19,7 @@ export const Container = styled.View`
 export const DescriptionContainer = styled.View`
   margin: ${margins.xs};
 `
+
+export const PriceContainer = styled.View`
+  margin-bottom: ${margins.s};
+`

@@ -1,5 +1,6 @@
-import React, { FC, useState } from 'react'
-import { ScrollView, Text } from 'react-native'
+import React, { FC, useCallback, useState } from 'react'
+import { ScrollView } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import Card from '../../components/Card'
 
@@ -10,10 +11,17 @@ import OrderButton from '../../components/OrderButton'
 import FilterButton from '../../components/FilterButton'
 import OrderModal from '../../components/OrderModal'
 import FilterModal from '../../components/FilterModal'
+import { Property } from '../../typings/IProperty'
 
 const Home: FC = () => {
   const [toggleOrderModal, setToggleOrderModal] = useState(false)
   const [toggleFilterModal, setToggleFilterModal] = useState(false)
+
+  const { navigate } = useNavigation()
+
+  const handleCardPress = (property: Property) => {
+    navigate('PropertyDetails', { property })
+  }
 
   return (
     <>
@@ -39,6 +47,7 @@ const Home: FC = () => {
                 price={property.price}
                 address={property.address}
                 features={propertyFeatures}
+                onPressCard={() => handleCardPress(property)}
               />
             )
           })}

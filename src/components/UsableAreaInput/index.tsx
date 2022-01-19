@@ -5,17 +5,20 @@ import Input from '../Input'
 import { Icon } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  setAddressToFilter: (address: string) => void
+  setUsableAreaToFilter: (usableArea: number) => void
 }
 
-const AddressInput: FC<InputProps> = ({ setAddressToFilter }) => {
-  const [addressText, setAddressText] = useState('')
+const UsableAreaInput: FC<InputProps> = ({
+  setUsableAreaToFilter,
+  ...props
+}) => {
+  const [usableAreaText, setUsableAreaText] = useState(0)
   const [inputIsActive, setInputIsActive] = useState(false)
 
   const handleOnBlur = useCallback(() => {
     setInputIsActive(false)
-    setAddressToFilter(addressText)
-  }, [addressText])
+    setUsableAreaToFilter(usableAreaText)
+  }, [usableAreaText])
 
   const handleOnFocus = useCallback(() => {
     setInputIsActive(true)
@@ -23,23 +26,25 @@ const AddressInput: FC<InputProps> = ({ setAddressToFilter }) => {
 
   return (
     <Input
-      value={addressText}
-      onChangeText={setAddressText}
+      {...props}
+      inputIsActive={inputIsActive}
+      value={usableAreaText}
+      onChangeText={setUsableAreaText}
       onBlur={handleOnBlur}
       onFocus={handleOnFocus}
       onSubmitEditing={handleOnBlur}
-      placeholder="Digite aqui o endereço"
-      inputIsActive={inputIsActive}
       icon={
         <Icon
-          inputIsActive={inputIsActive || !!addressText}
-          name="map-marker-alt"
-          size={15}
+          name="ruler-square"
+          inputIsActive={inputIsActive || !!usableAreaText}
+          size={18}
         />
       }
+      keyboardType="numeric"
       returnKeyType="done"
+      inputSize="s"
     />
   )
 }
 
-export default AddressInput
+export default UsableAreaInput

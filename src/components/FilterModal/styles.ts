@@ -4,7 +4,9 @@ import fonts from '../../styles/fonts'
 import { margins } from '../../styles/margins'
 
 export const Container = styled.View`
-  margin: ${margins.s};
+  margin-top: ${margins.s};
+  margin-horizontal: ${margins.s};
+  margin-bottom: ${margins.l};
 `
 
 export const HeaderContainer = styled.View`
@@ -38,7 +40,7 @@ export const ItemText = styled.Text`
 
 export const ItemContent = styled.View`
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   width: 100%;
   margin-top: ${margins.s};

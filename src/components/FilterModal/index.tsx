@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
-import { FontAwesome5 } from '@expo/vector-icons'
 
 import { Modalize } from 'react-native-modalize'
 
@@ -13,9 +12,12 @@ import {
   Title,
 } from './styles'
 
+import { getWindowSize } from '../../utils/getWindowSize'
 import Button from '../Button'
-import Input from '../Input'
 import AddressInput from '../AddressInput'
+import PriceInput from '../PriceInput'
+import { PriceInputProps, UsableAreaInputProps } from '../../typings/IInput'
+import UsableAreaInput from '../UsableAreaInput'
 
 interface FilterModalProps {
   toggle: boolean
@@ -23,6 +25,7 @@ interface FilterModalProps {
 }
 
 const buttonsToFilterCount = 5
+const modalHeight = getWindowSize().height - 120
 
 const FilterModal: FC<FilterModalProps> = ({
   toggle,
@@ -37,9 +40,23 @@ const FilterModal: FC<FilterModalProps> = ({
   const openModal = () => modalizeRef.current?.open()
   const closeModal = () => modalizeRef.current?.close()
 
-  const onAddressBlur = props => {
-    // not working
-    console.warn(props.target.value)
+  const setAddressToFilter = (address: string) => {
+    // console.warn('address', address)
+  }
+
+  const setPriceToFilter = ({ price, type }: PriceInputProps) => {
+    // console.warn({ type, price })
+  }
+
+  const setUsableAreaToFilter = ({
+    usableArea,
+    type,
+  }: UsableAreaInputProps) => {
+    // console.warn({ type, usableArea })
+  }
+
+  const handleApplyFilters = () => {
+    closeModal()
   }
 
   useEffect(() => {
@@ -51,8 +68,8 @@ const FilterModal: FC<FilterModalProps> = ({
     <>
       <Modalize
         ref={modalizeRef}
-        snapPoint={500}
-        modalHeight={750} // screen height - header height
+        snapPoint={modalHeight}
+        modalHeight={modalHeight}
         onClose={() => setToggleFilterModal(false)}
       >
         <Container>
@@ -63,12 +80,25 @@ const FilterModal: FC<FilterModalProps> = ({
             <Item>
               <ItemText>Endereço</ItemText>
               <ItemContent>
-                <AddressInput onBlur={onAddressBlur} onSubmit={onAddressBlur} />
+                <AddressInput setAddressToFilter={setAddressToFilter} />
               </ItemContent>
             </Item>
             <Item>
               <ItemText>Faixa de preço</ItemText>
-              <ItemContent></ItemContent>
+              <ItemContent>
+                <PriceInput
+                  setPriceToFilter={price =>
+                    setPriceToFilter({ price, type: 'min' })
+                  }
+                  placeholder="preço mínimo"
+                />
+                <PriceInput
+                  setPriceToFilter={price =>
+                    setPriceToFilter({ price, type: 'max' })
+                  }
+                  placeholder="preço máximo"
+                />
+              </ItemContent>
             </Item>
             <Item>
               <ItemText>Quartos</ItemText>
@@ -121,11 +151,26 @@ const FilterModal: FC<FilterModalProps> = ({
               </ItemContent>
             </Item>
             <Item>
-              <ItemText>Área útil</ItemText>
-              <ItemContent></ItemContent>
+              <ItemText>Área útil (m2)</ItemText>
+              <ItemContent>
+                <UsableAreaInput
+                  setUsableAreaToFilter={usableArea =>
+                    setUsableAreaToFilter({ usableArea, type: 'min' })
+                  }
+                  inputSize="s"
+                  placeholder="de"
+                />
+                <UsableAreaInput
+                  setUsableAreaToFilter={usableArea =>
+                    setUsableAreaToFilter({ usableArea, type: 'max' })
+                  }
+                  inputSize="s"
+                  placeholder="até"
+                />
+              </ItemContent>
             </Item>
           </OptionsContainer>
-          <Button text="Aplicar filtros" onPress={() => {}} />
+          <Button text="Aplicar filtros" onPress={handleApplyFilters} />
         </Container>
       </Modalize>
     </>

@@ -3,7 +3,7 @@ import { Container, HomeIcon, Title } from './styles'
 
 interface HeaderTitleProps {
   text: string
-  hasIcon: boolean
+  hasIcon?: boolean
 }
 
 const HeaderTitle: FC<HeaderTitleProps> = ({ text, hasIcon }) => (

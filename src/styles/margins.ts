@@ -10,6 +10,8 @@ export const margins = {
 export const sizes = {
   cardWidth: '100%',
   cardHeight: '300px',
-  imageHeight: '55%',
-  propertyFeatureCircleSize: '35px',
+  smallImageHeight: '55%',
+  largeImageHeight: '64%',
+  propertyFeatureCircleSizeLarge: '47px',
+  propertyFeatureCircleSizeSmall: '35px',
 }
