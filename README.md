@@ -1,4 +1,4 @@
-<h1 style="color: #d8315e; font-weight: bold; font-family: sans-serif"> KEYCASH ・ Properties Mobile App </h1>
+# <span style="color: #d8315e; font-weight: bold; font-family: sans-serif"> KEYCASH ・ Properties Mobile App </span>
 
 [![Author](https://img.shields.io/badge/author-GabrielPaiva-d8315e?style=flat)](https://github.com/gpaiva00)
 [![Languages](https://img.shields.io/github/languages/count/gpaiva00/keycash-frontend-challenge-gabriel-paiva?color=121214&style=flat)](#)
