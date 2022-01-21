@@ -27,4 +27,30 @@ And in other run:
 yarn start
 ```
 
-# 📱 How to generate APK
+# 📱 How to build the app
+
+If you want to build a standalone app, please install expo-cli:
+
+```bash
+yarn global add expo-cli
+```
+
+And run:
+
+```bash
+expo build:android
+```
+
+Or:
+
+```bash
+expo build:ios
+```
+
+If you don't already have a development server running for this project, expo will start one for you.
+
+When building for android you can choose to build APK:
+
+```bash
+expo build:android -t apk
+```
