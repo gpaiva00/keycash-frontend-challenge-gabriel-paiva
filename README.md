@@ -24,7 +24,13 @@ yarn run-db
 And in other run:
 
 ```bash
-yarn start
+yarn ios
+```
+
+Or
+
+```bash
+yarn android
 ```
 
 # 📱 How to build the app
