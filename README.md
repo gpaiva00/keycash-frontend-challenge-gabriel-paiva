@@ -1,10 +1,30 @@
-# <span style="color: #d8315e; font-weight: bold; font-family: sans-serif"> KEYCASH ・ Properties Mobile App </span>
+# 🏠 KEYCASH ・ Properties Mobile App
 
 [![Author](https://img.shields.io/badge/author-GabrielPaiva-d8315e?style=flat)](https://github.com/gpaiva00)
-[![Languages](https://img.shields.io/github/languages/count/gpaiva00/keycash-frontend-challenge-gabriel-paiva?color=121214&style=flat)](#)
+[![Languages](https://img.shields.io/github/languages/count/gpaiva00/keycash-frontend-challenge-gabriel-paiva?color=d8315e&style=flat)](#)
 
-<h2 style="color: #d8315e; font-weight: bold; font-family: sans-serif"> Demo </h2>
+# 👁 DEMO
+
 <img src="./assets/demo.gif" width="300" style="margin-bottom: 50px"/>
 
-<h1 style="color: #d8315e; font-weight: bold; font-family: sans-serif"> ⭐️ Getting Started </h1>
-After you clone this repo and install all dependencies, enter the project folder and just run `yarn start`. 🎉
+# ⭐️ Getting Started
+
+In order to run app locally, clone this repo, enter the project folder, and install all dependencies:
+
+```bash
+yarn install
+```
+
+In one terminal run:
+
+```bash
+yarn run-db
+```
+
+And in other run:
+
+```bash
+yarn start
+```
+
+# 📱 How to generate APK

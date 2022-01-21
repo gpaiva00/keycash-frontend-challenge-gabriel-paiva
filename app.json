@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "keycash-app",
+    "name": "Keycash",
     "slug": "keycash-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,7 +17,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.keycash.mobile",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
