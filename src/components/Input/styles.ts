@@ -20,7 +20,7 @@ export const Container = styled.View<ContainerProps>`
 
   width: ${({ size }) => (size === 's' ? '45%' : '100%')};
   padding-horizontal: ${margins.xs};
-  height: ${inputHeight};
+  height: ${`${inputHeight}px`};
 `
 
 export const Input = styled.TextInput`

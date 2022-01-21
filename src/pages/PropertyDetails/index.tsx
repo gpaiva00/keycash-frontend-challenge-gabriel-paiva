@@ -34,9 +34,11 @@ const PropertyDetails: FC<PropertyDetailsProps> = () => {
     usableArea: property.usableArea,
   }
 
-  const propertyLocation = {
+  const propertyRegion = {
     latitude: property.address.geolocation.lat,
     longitude: property.address.geolocation.lng,
+    latitudeDelta: 0.0622,
+    longitudeDelta: 0.0421,
   }
 
   return (
@@ -54,16 +56,11 @@ const PropertyDetails: FC<PropertyDetailsProps> = () => {
         </ContentContainer>
         <MapLocation
           provider={PROVIDER_GOOGLE}
-          initialRegion={{
-            latitude: propertyLocation.latitude,
-            longitude: propertyLocation.longitude,
-            latitudeDelta: 0.0622,
-            longitudeDelta: 0.0421,
-          }}
+          initialRegion={propertyRegion}
           minZoomLevel={15}
         >
           <Marker
-            coordinate={propertyLocation}
+            coordinate={propertyRegion}
             title="Keycash"
             description={property.address.formattedAddress}
           />

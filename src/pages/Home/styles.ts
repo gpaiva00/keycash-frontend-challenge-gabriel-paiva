@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import { margins } from '../../styles/margins'
 
 export const Container = styled.View`
-  margin: ${`${margins.m} ${margins.s}`};
+  margin-top: ${margins.m};
+  margin-horizontal: ${margins.s};
 `
 
 export const ButtonsContainer = styled.View`

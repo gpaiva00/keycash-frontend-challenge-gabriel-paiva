@@ -11,21 +11,39 @@ import {
   Title,
 } from './styles'
 import colors from '../../styles/colors'
+import usePersistedState from '../../hooks/usePersistedState'
+import { ORDER_STORE_KEY } from '../../utils/storeKeys'
 
 interface OrderModalProps {
   toggle: boolean
   setToggleOrderModal: React.Dispatch<React.SetStateAction<boolean>>
+  setOrderToFilter: React.Dispatch<React.SetStateAction<'desc' | 'asc'>>
+  orderToFilter: 'desc' | 'asc'
 }
 
 const iconSize = 26
 
-const OrderModal: FC<OrderModalProps> = ({ toggle, setToggleOrderModal }) => {
-  const [selectedItem, setSelectedItem] = useState(0)
+const OrderModal: FC<OrderModalProps> = ({
+  toggle,
+  setToggleOrderModal,
+  setOrderToFilter,
+  orderToFilter,
+}) => {
+  const { getStoredData } = usePersistedState()
+
   const modalizeRef = useRef<Modalize>(null)
+  const { storeData } = usePersistedState()
 
   const onPressItem = (key: number) => {
-    setSelectedItem(key)
+    const order = key === 0 ? 'desc' : 'asc'
+    setOrderToFilter(order)
+    storeData(ORDER_STORE_KEY, order)
     setTimeout(() => closeModal(), 500)
+  }
+
+  const getStoredOrder = async () => {
+    const storedOrder = await getStoredData(ORDER_STORE_KEY)
+    setOrderToFilter(storedOrder || 'desc')
   }
 
   const openModal = () => modalizeRef.current?.open()
@@ -34,6 +52,12 @@ const OrderModal: FC<OrderModalProps> = ({ toggle, setToggleOrderModal }) => {
   useEffect(() => {
     if (toggle === true) openModal()
     else closeModal()
+
+    const getStoredData = async () => {
+      await getStoredOrder()
+    }
+
+    getStoredData()
   }, [toggle])
 
   return (
@@ -51,7 +75,7 @@ const OrderModal: FC<OrderModalProps> = ({ toggle, setToggleOrderModal }) => {
           <OptionsContainer>
             <Item onPress={() => onPressItem(0)}>
               <ItemText>Maior preço</ItemText>
-              {selectedItem === 0 && (
+              {orderToFilter === 'desc' && (
                 <FontAwesome
                   name="check-circle"
                   color={colors.primary}
@@ -61,7 +85,7 @@ const OrderModal: FC<OrderModalProps> = ({ toggle, setToggleOrderModal }) => {
             </Item>
             <Item onPress={() => onPressItem(1)}>
               <ItemText>Menor preço</ItemText>
-              {selectedItem === 1 && (
+              {orderToFilter === 'asc' && (
                 <FontAwesome
                   name="check-circle"
                   color={colors.primary}

@@ -6,6 +6,7 @@ import HeaderTitle from '../components/HeaderTitle'
 import PropertyDetails from '../pages/PropertyDetails'
 import { Property } from '../typings/IProperty'
 import colors from '../styles/colors'
+import HeaderShareButton from '../components/HeaderShareButton'
 
 type AppStackParamList = {
   Home: undefined
@@ -30,9 +31,10 @@ const AppRoutes: FC = () => (
       name="PropertyDetails"
       component={PropertyDetails}
       options={{
-        headerTitle: () => <HeaderTitle text="Detalhes do imóvel" />,
+        headerTitle: () => <HeaderTitle text="detalhes do imóvel" />,
         headerBackTitleVisible: false,
         headerTintColor: colors.primary,
+        headerRight: () => <HeaderShareButton />,
       }}
     />
   </AppStack.Navigator>

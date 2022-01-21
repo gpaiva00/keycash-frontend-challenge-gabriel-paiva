@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FontAwesome5 } from '@expo/vector-icons'
+import CurrencyInput from 'react-native-currency-input'
 
 import { margins } from '../../styles/margins'
 import colors from '../../styles/colors'
@@ -13,4 +13,9 @@ export const BRLText = styled.Text<TextProps>`
     inputIsActive ? colors.primary : colors.inputBorder};
   font-family: 'Roboto_700Bold';
   margin-right: ${margins.xxs};
+`
+
+export const Input = styled(CurrencyInput)`
+  width: 85%;
+  height: 100%;
 `

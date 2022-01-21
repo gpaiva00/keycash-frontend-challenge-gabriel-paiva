@@ -6,13 +6,15 @@ import { Icon } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   setUsableAreaToFilter: (usableArea: number) => void
+  initialValue?: number
 }
 
 const UsableAreaInput: FC<InputProps> = ({
   setUsableAreaToFilter,
+  initialValue = 0,
   ...props
 }) => {
-  const [usableAreaText, setUsableAreaText] = useState(0)
+  const [usableAreaText, setUsableAreaText] = useState(initialValue)
   const [inputIsActive, setInputIsActive] = useState(false)
 
   const handleOnBlur = useCallback(() => {

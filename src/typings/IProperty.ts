@@ -7,15 +7,15 @@ export interface PropertyAddress {
 }
 
 export interface Property {
-  id: string
-  address: PropertyAddress
-  images: string[]
-  price: number
-  bathrooms: number
-  bedrooms: number
-  parkingSpaces: number
-  usableArea: number
-  publish: boolean
+  id?: string
+  address?: PropertyAddress
+  images?: string[]
+  price?: number | string
+  bathrooms?: number
+  bedrooms?: number
+  parkingSpaces?: number
+  usableArea?: number
+  publish?: boolean
 }
 
 export interface PropertyFeatures {

@@ -6,10 +6,14 @@ import { Icon } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   setAddressToFilter: (address: string) => void
+  initialValue?: string
 }
 
-const AddressInput: FC<InputProps> = ({ setAddressToFilter }) => {
-  const [addressText, setAddressText] = useState('')
+const AddressInput: FC<InputProps> = ({
+  setAddressToFilter,
+  initialValue = '',
+}) => {
+  const [addressText, setAddressText] = useState(initialValue)
   const [inputIsActive, setInputIsActive] = useState(false)
 
   const handleOnBlur = useCallback(() => {
@@ -21,10 +25,14 @@ const AddressInput: FC<InputProps> = ({ setAddressToFilter }) => {
     setInputIsActive(true)
   }, [])
 
+  const handleOnChangeText = useCallback((text: string) => {
+    setAddressText(text)
+  }, [])
+
   return (
     <Input
       value={addressText}
-      onChangeText={setAddressText}
+      onChangeText={handleOnChangeText}
       onBlur={handleOnBlur}
       onFocus={handleOnFocus}
       onSubmitEditing={handleOnBlur}

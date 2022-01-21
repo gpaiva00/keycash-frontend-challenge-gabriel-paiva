@@ -18,10 +18,6 @@ export const Title = styled.Text`
   padding-bottom: ${margins.xs};
 `
 
-export const FeaturesContainer = styled.View``
-
-export const LocationContainer = styled.View``
-
 export const MapLocation = styled(MapView)`
   width: 100%;
   height: ${sizes.cardHeight};

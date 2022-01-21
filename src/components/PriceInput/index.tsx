@@ -1,15 +1,20 @@
 import React, { FC, InputHTMLAttributes, useCallback, useState } from 'react'
 
-import Input from '../Input'
+import { Container } from '../Input/styles'
 
-import { BRLText } from './styles'
+import { BRLText, Input } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   setPriceToFilter: (value: number) => void
+  initialValue?: number
 }
 
-const PriceInput: FC<InputProps> = ({ setPriceToFilter, ...props }) => {
-  const [priceText, setPriceText] = useState(0)
+const PriceInput: FC<InputProps> = ({
+  setPriceToFilter,
+  initialValue = null,
+  ...props
+}) => {
+  const [priceText, setPriceText] = useState(initialValue)
   const [inputIsActive, setInputIsActive] = useState(false)
 
   const handleOnBlur = useCallback(() => {
@@ -22,19 +27,24 @@ const PriceInput: FC<InputProps> = ({ setPriceToFilter, ...props }) => {
   }, [])
 
   return (
-    <Input
-      {...props}
-      inputIsActive={inputIsActive}
-      value={priceText}
-      onChangeText={setPriceText}
-      onBlur={handleOnBlur}
-      onFocus={handleOnFocus}
-      onSubmitEditing={handleOnBlur}
-      icon={<BRLText inputIsActive={inputIsActive || !!priceText}>R$</BRLText>}
-      keyboardType="numeric"
-      inputSize="s"
-      returnKeyType="done"
-    />
+    <Container size="s" inputIsActive={inputIsActive}>
+      <BRLText inputIsActive={inputIsActive || !!priceText}>R$</BRLText>
+
+      <Input
+        {...props}
+        value={priceText}
+        onChangeValue={setPriceText}
+        onBlur={handleOnBlur}
+        onFocus={handleOnFocus}
+        onSubmitEditing={handleOnBlur}
+        delimiter="."
+        separator=","
+        precision={2}
+        keyboardType="numeric"
+        inputSize="s"
+        returnKeyType="done"
+      />
+    </Container>
   )
 }
 
